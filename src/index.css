@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* NetworKween - Luxe Discret */
+    --background: 222 50% 6%;
+    --foreground: 45 30% 90%;
+
+    --card: 222 45% 8%;
+    --card-foreground: 45 30% 90%;
+
+    --popover: 222 45% 8%;
+    --popover-foreground: 45 30% 90%;
+
+    --primary: 42 45% 55%;
+    --primary-foreground: 222 50% 6%;
+
+    --secondary: 222 35% 12%;
+    --secondary-foreground: 45 30% 85%;
+
+    --muted: 222 30% 15%;
+    --muted-foreground: 220 15% 55%;
+
+    --accent: 42 50% 45%;
+    --accent-foreground: 222 50% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 25% 18%;
+    --input: 222 25% 18%;
+    --ring: 42 45% 55%;
+
+    --radius: 0.25rem;
+
+    /* Custom tokens */
+    --gold: 42 45% 55%;
+    --gold-light: 42 50% 65%;
+    --gold-dark: 42 40% 45%;
+    --midnight: 222 50% 6%;
+    --midnight-light: 222 45% 10%;
+    --midnight-medium: 222 40% 14%;
+
+    /* Typography */
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    /* Spacing */
+    --section-padding: clamp(4rem, 12vh, 8rem);
+
+    --sidebar-background: 222 45% 8%;
+    --sidebar-foreground: 45 30% 90%;
+    --sidebar-primary: 42 45% 55%;
+    --sidebar-primary-foreground: 222 50% 6%;
+    --sidebar-accent: 222 35% 12%;
+    --sidebar-accent-foreground: 45 30% 90%;
+    --sidebar-border: 222 25% 18%;
+    --sidebar-ring: 42 45% 55%;
+  }
+
+  .dark {
+    --background: 222 50% 6%;
+    --foreground: 45 30% 90%;
+    --card: 222 45% 8%;
+    --card-foreground: 45 30% 90%;
+    --popover: 222 45% 8%;
+    --popover-foreground: 45 30% 90%;
+    --primary: 42 45% 55%;
+    --primary-foreground: 222 50% 6%;
+    --secondary: 222 35% 12%;
+    --secondary-foreground: 45 30% 85%;
+    --muted: 222 30% 15%;
+    --muted-foreground: 220 15% 55%;
+    --accent: 42 50% 45%;
+    --accent-foreground: 222 50% 6%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 25% 18%;
+    --input: 222 25% 18%;
+    --ring: 42 45% 55%;
+    --sidebar-background: 222 45% 8%;
+    --sidebar-foreground: 45 30% 90%;
+    --sidebar-primary: 42 45% 55%;
+    --sidebar-primary-foreground: 222 50% 6%;
+    --sidebar-accent: 222 35% 12%;
+    --sidebar-accent-foreground: 45 30% 90%;
+    --sidebar-border: 222 25% 18%;
+    --sidebar-ring: 42 45% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer components {
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .text-gold-light {
+    color: hsl(var(--gold-light));
+  }
+
+  .bg-midnight {
+    background-color: hsl(var(--midnight));
+  }
+
+  .bg-midnight-light {
+    background-color: hsl(var(--midnight-light));
+  }
+
+  .bg-midnight-medium {
+    background-color: hsl(var(--midnight-medium));
+  }
+
+  .border-gold {
+    border-color: hsl(var(--gold) / 0.3);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  /* Section styling - more defined */
+  .section-luxe {
+    @apply py-28 md:py-36 lg:py-44 px-6 md:px-12 lg:px-20;
+  }
+
+  .section-divider {
+    @apply w-32 md:w-48 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent mx-auto;
+  }
+
+  /* Section backgrounds */
+  .section-alternate {
+    @apply bg-midnight-light border-y border-primary/10;
+  }
+
+  /* Text styling - improved contrast */
+  .heading-display {
+    @apply font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground;
+  }
+
+  .heading-section {
+    @apply font-display text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-primary;
+  }
+
+  .body-elegant-lg {
+    @apply font-body text-lg md:text-xl font-light leading-relaxed text-foreground/90;
+  }
+
+  .body-elegant {
+    @apply font-body text-base md:text-lg font-light leading-relaxed text-foreground/80;
+  }
+
+  .body-small {
+    @apply font-body text-sm md:text-base font-light leading-relaxed text-foreground/70;
+  }
+
+  /* Gold gradient text */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold)), hsl(var(--gold-dark)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Subtle glow effect */
+  .glow-gold {
+    box-shadow: 0 0 60px -20px hsl(var(--gold) / 0.2);
+  }
+
+  /* Fade in animation */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Crown decoration */
+  .crown-divider {
+    @apply w-8 h-8 opacity-40;
+  }
+}
+
+/* Selection styling */
+::selection {
+  background-color: hsl(var(--gold) / 0.2);
+  color: hsl(var(--gold-light));
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--midnight));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--gold) / 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--gold) / 0.5);
+}

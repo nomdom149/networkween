@@ -13,13 +13,14 @@ import photo9Asset from "@/assets/IMG_7418.jpeg.asset.json";
 import photo10 from "@/assets/network-queen.jpg";
 import photo11 from "@/assets/network-queen-2.jpg";
 import photo12 from "@/assets/network-queen-3.jpg";
+import photo13 from "@/assets/network-queen-4.jpg";
 
 interface GalleryProps {
   showDivider?: boolean;
 }
 
 export const Gallery = ({ showDivider = true }: GalleryProps) => {
-  const images = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8Asset.url, photo9Asset.url, photo10, photo11, photo12];
+  const images = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8Asset.url, photo9Asset.url, photo10, photo11, photo12, photo13];
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
